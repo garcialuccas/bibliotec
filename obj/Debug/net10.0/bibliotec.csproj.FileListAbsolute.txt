@@ -131,7 +131,6 @@ C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\h
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\5pxukap6ab-{0}-sk9pdc06kh-sk9pdc06kh.gz
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\23s9obl8db-{0}-97jjz38qqh-97jjz38qqh.gz
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\mec7y7d674-{0}-0ab0atxhts-0ab0atxhts.gz
-C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\ozhd7ct3ze-{0}-2j15xsjx23-2j15xsjx23.gz
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\4r658xbx5c-{0}-xf66gwkgfh-xf66gwkgfh.gz
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\w0vy2ft3up-{0}-exvxn6h8fj-exvxn6h8fj.gz
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\ribdtpo261-{0}-6bsu047a4q-6bsu047a4q.gz
@@ -246,3 +245,5 @@ C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\refint\bibli
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\bibliotec.pdb
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\bibliotec.genruntimeconfig.cache
 C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\ref\bibliotec.dll
+C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\bibliotec.sourcelink.json
+C:\Users\54568203821\Desktop\atividades\bibliotec\obj\Debug\net10.0\compressed\ozhd7ct3ze-{0}-eny765f1pc-eny765f1pc.gz

@@ -1,0 +1,25 @@
+using bibliotec.Models;
+using Microsoft.EntityFrameworkCore;
+
+namespace bibliotec.Contexts
+{
+    public class BbDbContext : DbContext
+    {
+        public BbDbContext(DbContextOptions<BbDbContext> options) : base(options) {}
+
+        public DbSet<Usuario> Usuario { get; set; } = null!;
+
+        public DbSet<Categoria> Categoria { get; set; } = null!;
+
+        public DbSet<Livro> Livro { get; set; } = null!;
+
+        public DbSet<LivroCategoria> LivroCategoria { get; set; } = null!;
+
+        public DbSet<Reserva> Reserva { get; set; } = null!;
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<LivroCategoria>().HasKey(lc => new {lc.LivroId, lc.CategoriaId});
+        }
+    }
+}
