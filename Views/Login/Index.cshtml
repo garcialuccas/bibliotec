@@ -17,10 +17,10 @@
 
         <span>Entre no Bibliotec</span>
 
-        <form method="post" action="">
+        <form method="post" asp-action="Logar" asp-controller="Login">
 
             <!-- Mensagem de erro -->
-            <!-- <p class="msg_erro_login">E-mail ou senha incorretos!</p> -->
+            @if(ViewBag.Erro != null) {<p class="msg_erro_login">E-mail ou senha incorretos!</p>}
 
             <div class="form_linha">
                 <label for="email">E-mail</label>
