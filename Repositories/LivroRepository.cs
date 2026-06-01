@@ -24,5 +24,22 @@ namespace bibliotec.Repositories
             
             return await _context.Livro.Include(l => l.LivroCategorias).ThenInclude(lc => lc.Categoria).ToListAsync();
         }
+
+        public async Task CadastrarCatLivroAsync(LivroCategoria lc)
+        {
+            await _context.LivroCategoria.AddAsync(lc);
+            _context.SaveChanges();
+        }
+
+        public async Task CadastrarLivro(Livro l)
+        {
+            await _context.Livro.AddAsync(l);
+            _context.SaveChanges();
+        }
+
+        public async Task<IEnumerable<Categoria>> ListarCategoriasAsync()
+        {
+            return await _context.Categoria.ToListAsync();
+        }
     }
 }

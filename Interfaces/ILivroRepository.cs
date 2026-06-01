@@ -8,6 +8,12 @@ namespace bibliotec.Interfaces
 {
     public interface ILivroRepository
     {
-        Task<IEnumerable<Livro>> BuscarLivrosAsync(); 
+        Task<IEnumerable<Livro>> BuscarLivrosAsync();
+
+        Task<IEnumerable<Categoria>> ListarCategoriasAsync();
+
+        Task CadastrarLivro(Livro l);
+
+        Task CadastrarCatLivroAsync(LivroCategoria lc);
     }
 }

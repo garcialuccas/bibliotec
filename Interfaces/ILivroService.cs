@@ -9,5 +9,9 @@ namespace bibliotec.Interfaces
     public interface ILivroService
     {
         Task<IEnumerable<Livro>> BuscarLivrosComCatAsync();
+
+        Task<IEnumerable<Categoria>> ListarCategoriasAsync();
+
+        Task CadastrarLivroAsyc(Livro l, string? catSelecionada, IFormFile arquivoImagem, string? ativo);
     }
 }

@@ -29,5 +29,30 @@ namespace bibliotec.Controllers
 
             return View(livros);
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Cadastro()
+        {
+            string? adminSessao = HttpContext.Session.GetString("Admin");
+            if (adminSessao == null || (adminSessao != "true" && adminSessao != "True")) return RedirectToAction("Index", "Login");
+
+            ViewBag.Admin = true;
+            ViewBag.Categorias = await _service.ListarCategoriasAsync();
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Cadastro(Livro l, string? CategoriasSelecionadas, IFormFile arquivoImagem, string? ativo)
+        {
+            string? adminSessao = HttpContext.Session.GetString("Admin");
+            if (adminSessao == null || (adminSessao != "true" && adminSessao != "True")) 
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            await _service.CadastrarLivroAsyc(l, CategoriasSelecionadas, arquivoImagem, ativo);
+
+            return RedirectToAction("Index", "Livro");
+        }
     }
 }
