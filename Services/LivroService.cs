@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using System.Windows.Markup;
 using bibliotec.Interfaces;
@@ -53,9 +54,21 @@ namespace bibliotec.Services
             }
         }
 
+        public async Task<bool> RemoverLivroAsync(int id)
+        {
+            Livro? l = await _repository.BuscaLivroId(id);
+
+            if (l == null) return false;
+
+            await _repository.ExcluirLivro(l);
+            await _repository.ExcluirCatLivro(l.Id);
+
+            return true;
+        }
+
         public async Task<IEnumerable<Categoria>> ListarCategoriasAsync()
         {
-                return await _repository.ListarCategoriasAsync();
+            return await _repository.ListarCategoriasAsync();
         }
 
         private async Task<string> UploadImagemAsync(IFormFile arquivoImagem)

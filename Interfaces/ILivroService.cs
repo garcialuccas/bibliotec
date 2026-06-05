@@ -13,5 +13,8 @@ namespace bibliotec.Interfaces
         Task<IEnumerable<Categoria>> ListarCategoriasAsync();
 
         Task CadastrarLivroAsyc(Livro l, string? catSelecionada, IFormFile arquivoImagem, string? ativo);
+
+        Task<bool> RemoverLivroAsync(int id);
+
     }
 }

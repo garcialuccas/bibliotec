@@ -15,5 +15,11 @@ namespace bibliotec.Interfaces
         Task CadastrarLivro(Livro l);
 
         Task CadastrarCatLivroAsync(LivroCategoria lc);
+
+        Task ExcluirLivro(Livro l);
+
+        Task ExcluirCatLivro(int livroid);
+
+        Task<Livro?> BuscaLivroId(int livroid);
     }
 }

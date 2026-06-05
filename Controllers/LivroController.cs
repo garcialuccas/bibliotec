@@ -45,7 +45,7 @@ namespace bibliotec.Controllers
         public async Task<IActionResult> Cadastro(Livro l, string? CategoriasSelecionadas, IFormFile arquivoImagem, string? ativo)
         {
             string? adminSessao = HttpContext.Session.GetString("Admin");
-            if (adminSessao == null || (adminSessao != "true" && adminSessao != "True")) 
+            if (adminSessao == null || (adminSessao != "true" && adminSessao != "True"))
             {
                 return RedirectToAction("Index", "Login");
             }
@@ -53,6 +53,21 @@ namespace bibliotec.Controllers
             await _service.CadastrarLivroAsyc(l, CategoriasSelecionadas, arquivoImagem, ativo);
 
             return RedirectToAction("Index", "Livro");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> ExcluirLivro(int id)
+        {
+            string? adminSessao = HttpContext.Session.GetString("Admin");
+            if (adminSessao == null || (adminSessao != "true" && adminSessao != "True"))
+            {
+                return RedirectToAction("Index", "Login");
+            }
+
+            bool excluido = await _service.RemoverLivroAsync(id);
+            if (excluido) return Ok();
+
+            return NotFound();
         }
     }
 }

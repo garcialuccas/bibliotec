@@ -28,7 +28,7 @@ namespace bibliotec.Models
         [StringLength(50)]
         public string Editora { get; set; } = null!;
 
-        public string? Imagem;
+        public string? Imagem { get; set; }
 
         public ICollection<Reserva> Reservas { get; set; } = new List<Reserva>(); 
 

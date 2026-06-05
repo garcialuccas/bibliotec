@@ -37,9 +37,27 @@ namespace bibliotec.Repositories
             _context.SaveChanges();
         }
 
+        public async Task ExcluirLivro(Livro l)
+        {
+            _context.Livro.Remove(l);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task ExcluirCatLivro(int livroid)
+        {
+            IEnumerable<LivroCategoria> lcs = _context.LivroCategoria.Where(id => id.LivroId == livroid);
+            _context.LivroCategoria.RemoveRange(lcs);
+            await _context.SaveChangesAsync();
+        }
+
         public async Task<IEnumerable<Categoria>> ListarCategoriasAsync()
         {
             return await _context.Categoria.ToListAsync();
+        }
+
+        public async Task<Livro?> BuscaLivroId(int livroid)
+        {
+            return await _context.Livro.FirstOrDefaultAsync(l => l.Id == livroid);
         }
     }
 }
